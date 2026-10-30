@@ -1,0 +1,20 @@
+mutation CreateReturn($input: CreateReturnInput!) {
+  createReturn(input: $input) {
+    ...ReturnRequestFields
+    items {
+      ...ReturnItemFields
+    }
+  }
+}
+
+mutation ApproveReturn($id: ID!) {
+  approveReturn(id: $id) {
+    ...ReturnRequestFields
+  }
+}
+
+mutation RejectReturn($id: ID!) {
+  rejectReturn(id: $id) {
+    ...ReturnRequestFields
+  }
+}

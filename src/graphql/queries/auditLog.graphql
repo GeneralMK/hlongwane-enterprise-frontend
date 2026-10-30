@@ -1,0 +1,11 @@
+  query GetAuditLogs($input: FindAuditLogsInput) {
+    auditLogs(input: $input) {
+      auditLogs {
+        ...AuditLogFields
+      }
+      total
+      page
+      limit
+      totalPages
+    }
+  }

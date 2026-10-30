@@ -1,0 +1,29 @@
+query GetOrders($input: FindOrdersInput) {
+  orders(input: $input) {
+    orders {
+      ...OrderListFields
+    }
+    total
+    page
+    limit
+    totalPages
+  }
+}
+
+query GetMyOrders($input: FindOrdersInput) {
+  myOrders(input: $input) {
+    orders {
+      ...OrderListFields
+    }
+    total
+    page
+    limit
+    totalPages
+  }
+}
+
+query GetOrder($id: ID!) {
+  order(id: $id) {
+    ...OrderDetailFields
+  }
+}

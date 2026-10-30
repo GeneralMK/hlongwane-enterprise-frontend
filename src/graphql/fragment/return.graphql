@@ -1,0 +1,39 @@
+fragment ReturnRequestFields on ReturnRequest {
+  id
+  orderId
+  requestedByUserId
+  status
+  reason
+  notes
+  createdAt
+  updatedAt
+}
+
+fragment ReturnItemFields on ReturnItem {
+  id
+  returnRequestId
+  orderItemId
+  quantity
+  condition
+  resolution
+  createdAt
+  updatedAt
+}
+
+fragment ReturnDetailFields on ReturnRequest {
+  ...ReturnRequestFields
+
+  items {
+    ...ReturnItemFields
+  }
+
+  evidence {
+    id
+    returnRequestId
+    fileUploadId
+    createdAt
+    fileUpload {
+      ...FileUploadFields
+    }
+  }
+}

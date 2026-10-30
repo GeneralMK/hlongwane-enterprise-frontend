@@ -1,0 +1,5 @@
+mutation AdjustInventory($variantId: ID!, $input: AdjustInventoryInput!) {
+  adjustInventory(variantId: $variantId, input: $input) {
+    ...InventoryFields
+  }
+}

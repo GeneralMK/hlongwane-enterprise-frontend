@@ -1,0 +1,11 @@
+query GetBrands {
+  brands {
+    ...BrandFields
+  }
+}
+
+query GetBrand($id: ID!) {
+  brand(id: $id) {
+    ...BrandFields
+  }
+}

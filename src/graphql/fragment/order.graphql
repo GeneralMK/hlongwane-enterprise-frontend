@@ -1,0 +1,60 @@
+fragment OrderFields on Order {
+  id
+  orderNumber
+  userId
+  guestEmail
+  cartId
+  status
+  currency
+  subtotal
+  discountTotal
+  deliveryFee
+  taxTotal
+  total
+  deliveryAddress
+  billingAddress
+  notes
+  placedAt
+  paidAt
+  cancelledAt
+  createdAt
+  updatedAt
+}
+
+fragment OrderItemFields on OrderItem {
+  id
+  orderId
+  productId
+  variantId
+  productNameSnapshot
+  skuSnapshot
+  attributesSnapshot
+  unitPrice
+  discountAmount
+  quantity
+  lineTotal
+  createdAt
+}
+
+fragment OrderStatusHistoryFields on OrderStatusHistory {
+  id
+  orderId
+  status
+  note
+  changedByUserId
+  createdAt
+}
+
+fragment OrderListFields on Order {
+  ...OrderFields
+  items {
+    ...OrderItemFields
+  }
+}
+
+fragment OrderDetailFields on Order {
+  ...OrderListFields
+  statusHistory {
+    ...OrderStatusHistoryFields
+  }
+}

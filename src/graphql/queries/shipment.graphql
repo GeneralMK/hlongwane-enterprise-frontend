@@ -1,0 +1,5 @@
+query GetShipment($id: ID!) {
+  shipment(id: $id) {
+    ...ShipmentDetailFields
+  }
+}

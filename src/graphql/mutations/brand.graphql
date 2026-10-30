@@ -1,0 +1,11 @@
+mutation CreateBrand($input: CreateBrandInput!) {
+  createBrand(input: $input) {
+    ...BrandFields
+  }
+}
+
+mutation UpdateBrand($id: ID!, $input: UpdateBrandInput!) {
+  updateBrand(id: $id, input: $input) {
+    ...BrandFields
+  }
+}

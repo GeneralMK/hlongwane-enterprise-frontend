@@ -1,0 +1,28 @@
+fragment CategoryFields on Category {
+  id
+  name
+  slug
+  description
+  imageFileId
+  parentId
+  isActive
+  createdAt
+  updatedAt
+}
+
+fragment CategoryListFields on Category {
+  ...CategoryFields
+  imageFile {
+    id
+  }
+  children {
+    ...CategoryFields
+  }
+}
+
+fragment CategoryDetailFields on Category {
+  ...CategoryListFields
+  parent {
+    ...CategoryFields
+  }
+}

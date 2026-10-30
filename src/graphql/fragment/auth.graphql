@@ -1,0 +1,26 @@
+fragment AuthUserFields on AuthUser {
+  id
+  authUserId
+  email
+  firstName
+  lastName
+  phone
+  isActive
+  roles {
+    id
+    code
+    name
+  }
+  permissions
+  isAdmin
+  isSuperAdmin
+}
+
+fragment RegisteredCustomerFields on User {
+  id
+  email
+  firstName
+  lastName
+  phone
+  isActive
+}

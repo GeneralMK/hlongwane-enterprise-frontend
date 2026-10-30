@@ -1,0 +1,17 @@
+query GetUsers($input: FindUsersInput) {
+  users(input: $input) {
+    users {
+      ...UserListFields
+    }
+    total
+    page
+    limit
+    totalPages
+  }
+}
+
+query GetUser($id: ID!) {
+  user(id: $id) {
+    ...UserDetailFields
+  }
+}

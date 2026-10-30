@@ -1,0 +1,18 @@
+fragment InventoryFields on Inventory {
+  id
+  variantId
+  physicalQuantity
+  reservedQuantity
+  soldQuantity
+  availableQuantity
+  reorderLevel
+  createdAt
+  updatedAt
+}
+
+fragment InventoryDetailsFields on Inventory {
+  ...InventoryFields
+  variant {
+    id
+  }
+}

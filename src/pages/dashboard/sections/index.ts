@@ -1,0 +1,7 @@
+export * from './AddressesSection'
+export * from './OrdersSection'
+export * from './PaymentsSection'
+export * from './RentalsSection'
+export * from './SettingsSection'
+export * from './WishlistSection'
+export * from './myQueries'

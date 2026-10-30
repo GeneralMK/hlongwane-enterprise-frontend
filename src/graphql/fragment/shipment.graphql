@@ -1,0 +1,31 @@
+fragment ShipmentFields on Shipment {
+  id
+  orderId
+  provider
+  serviceLevel
+  trackingNumber
+  trackingUrl
+  status
+  shippedAt
+  deliveredAt
+  metadata
+  createdAt
+  updatedAt
+}
+
+fragment ShipmentEventFields on ShipmentEvent {
+  id
+  shipmentId
+  status
+  description
+  location
+  occurredAt
+  createdAt
+}
+
+fragment ShipmentDetailFields on Shipment {
+  ...ShipmentFields
+  events {
+    ...ShipmentEventFields
+  }
+}

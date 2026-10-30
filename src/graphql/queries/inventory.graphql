@@ -1,0 +1,11 @@
+query GetInventory {
+  inventory {
+    ...InventoryDetailsFields
+  }
+}
+
+query GetInventoryByVariant($variantId: ID!) {
+  inventoryByVariant(variantId: $variantId) {
+    ...InventoryDetailsFields
+  }
+}

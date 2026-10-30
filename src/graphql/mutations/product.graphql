@@ -1,0 +1,17 @@
+mutation CreateProduct($input: CreateProductInput!) {
+  createProduct(input: $input) {
+    ...ProductFields
+  }
+}
+
+mutation UpdateProduct($id: ID!, $input: UpdateProductInput!) {
+  updateProduct(id: $id, input: $input) {
+    ...ProductFields
+  }
+}
+
+mutation ArchiveProduct($id: ID!) {
+  archiveProduct(id: $id) {
+    ...ProductFields
+  }
+}

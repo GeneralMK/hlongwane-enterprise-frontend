@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.app.json",
+  "include": [
+    "src/rest",
+    "src/queries",
+    "src/mutations",
+    "src/fragments",
+    "src/vite-env.d.ts",
+    "src/components/rest"
+  ]
+}

@@ -1,0 +1,5 @@
+query GetReturnRequest($id: ID!) {
+  returnRequest(id: $id) {
+    ...ReturnDetailFields
+  }
+}

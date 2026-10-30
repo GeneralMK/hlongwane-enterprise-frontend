@@ -1,0 +1,10 @@
+fragment FileUploadFields on FileUpload {
+  id
+  name
+  size
+  type
+  url
+  objectKey
+  createdAt
+  updatedAt
+}

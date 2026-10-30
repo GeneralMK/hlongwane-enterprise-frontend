@@ -1,0 +1,53 @@
+fragment PaymentFields on Payment {
+  id
+  orderId
+  provider
+  status
+  reference
+  providerReference
+  amount
+  currency
+  checkoutUrl
+  failureCode
+  failureMessage
+  verifiedAt
+  paidAt
+  metadata
+  createdAt
+  updatedAt
+}
+
+fragment PaymentEventFields on PaymentEvent {
+  id
+  paymentId
+  providerEventId
+  idempotencyKey
+  eventType
+  signatureValid
+  payload
+  processedAt
+  createdAt
+}
+
+fragment RefundFields on Refund {
+  id
+  orderId
+  paymentId
+  status
+  amount
+  reason
+  providerReference
+  processedAt
+  createdAt
+  updatedAt
+}
+
+fragment PaymentDetailFields on Payment {
+  ...PaymentFields
+  events {
+    ...PaymentEventFields
+  }
+  refunds {
+    ...RefundFields
+  }
+}

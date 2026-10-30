@@ -1,0 +1,11 @@
+mutation CreateCategory($input: CreateCategoryInput!) {
+  createCategory(input: $input) {
+    ...CategoryFields
+  }
+}
+
+mutation UpdateCategory($id: ID!, $input: UpdateCategoryInput!) {
+  updateCategory(id: $id, input: $input) {
+    ...CategoryFields
+  }
+}

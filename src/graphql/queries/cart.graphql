@@ -1,0 +1,15 @@
+mutation AddCartItem($input: AddCartItemInput!) {
+  addCartItem(input: $input) {
+    ...CartItemFields
+  }
+}
+
+mutation UpdateCartItem($id: ID!, $input: UpdateCartItemInput!) {
+  updateCartItem(id: $id, input: $input) {
+    ...CartItemFields
+  }
+}
+
+mutation RemoveCartItem($id: ID!) {
+  removeCartItem(id: $id)
+}

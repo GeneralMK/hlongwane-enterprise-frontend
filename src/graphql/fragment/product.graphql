@@ -1,0 +1,45 @@
+fragment ProductFields on Product {
+  id
+  name
+  slug
+  shortDescription
+  description
+  brandId
+  categoryId
+  status
+  specifications
+  warrantyMonths
+  isFeatured
+  publishedAt
+  createdAt
+  updatedAt
+}
+
+fragment ProductCatalogueFields on Product {
+  ...ProductFields
+
+  brand {
+    id
+    name
+    slug
+  }
+
+  category {
+    id
+    name
+    slug
+  }
+
+  images {
+    id
+    position
+    isPrimary
+    fileUpload {
+      ...FileUploadFields
+    }
+  }
+
+  variants {
+    ...ProductVariantFields
+  }
+}

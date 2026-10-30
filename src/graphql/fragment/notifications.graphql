@@ -1,0 +1,16 @@
+fragment NotificationFields on Notification {
+  id
+  userId
+  channel
+  status
+  recipient
+  templateKey
+  subject
+  body
+  metadata
+  sentAt
+  failedAt
+  error
+  createdAt
+  updatedAt
+}

@@ -1,0 +1,11 @@
+query GetCategories {
+  categories {
+    ...CategoryListFields
+  }
+}
+
+query GetCategory($id: ID!) {
+  category(id: $id) {
+    ...CategoryDetailFields
+  }
+}

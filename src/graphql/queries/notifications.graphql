@@ -1,0 +1,11 @@
+query GetMyNotifications($page: Int, $limit: Int) {
+  myNotifications(page: $page, limit: $limit) {
+    notifications {
+      ...NotificationFields
+    }
+    total
+    page
+    limit
+    totalPages
+  }
+}

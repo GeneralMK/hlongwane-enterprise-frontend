@@ -1,0 +1,11 @@
+mutation CreateShipment($input: CreateShipmentInput!) {
+  createShipment(input: $input) {
+    ...ShipmentFields
+  }
+}
+
+mutation UpdateShipment($id: ID!, $input: UpdateShipmentInput!) {
+  updateShipment(id: $id, input: $input) {
+    ...ShipmentFields
+  }
+}
