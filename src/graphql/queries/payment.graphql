@@ -1,0 +1,11 @@
+query GetPayment($id: ID!) {
+  payment(id: $id) {
+    ...PaymentDetailFields
+  }
+}
+
+query GetPaymentByReference($reference: String!) {
+  paymentByReference(reference: $reference) {
+    ...PaymentDetailFields
+  }
+}

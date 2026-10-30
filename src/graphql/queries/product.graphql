@@ -1,0 +1,17 @@
+query GetProducts($input: FindProductsInput) {
+  products(input: $input) {
+    products {
+      ...ProductCatalogueFields
+    }
+    total
+    page
+    limit
+    totalPages
+  }
+}
+
+query GetProduct($id: ID!) {
+  product(id: $id) {
+    ...ProductCatalogueFields
+  }
+}

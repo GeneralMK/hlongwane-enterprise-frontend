@@ -1,0 +1,11 @@
+mutation CreateProductVariant($input: CreateProductVariantInput!) {
+  createProductVariant(input: $input) {
+    ...ProductVariantFields
+  }
+}
+
+mutation UpdateProductVariant($id: ID!, $input: UpdateProductVariantInput!) {
+  updateProductVariant(id: $id, input: $input) {
+    ...ProductVariantFields
+  }
+}

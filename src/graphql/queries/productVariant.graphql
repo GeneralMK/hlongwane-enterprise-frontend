@@ -1,0 +1,11 @@
+query GetProductVariants($productId: ID!) {
+  productVariants(productId: $productId) {
+    ...ProductVariantFields
+  }
+}
+
+query GetProductVariant($id: ID!) {
+  productVariant(id: $id) {
+    ...ProductVariantDetailFields
+  }
+}

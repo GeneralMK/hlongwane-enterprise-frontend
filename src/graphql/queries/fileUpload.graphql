@@ -1,0 +1,18 @@
+# mutation CreateFileUpload($input: CreateFileUploadInput!) {
+#   createFileUpload(input: $input) {
+#     ...FileUploadFields
+#   }
+# }
+
+# mutation UpdateFileUpload(
+#   $id: ID!
+#   $data: UpdateFileUploadInput!
+# ) {
+#   updateFileUpload(id: $id, data: $data) {
+#     ...FileUploadFields
+#   }
+# }
+
+# mutation DeleteFileUpload($id: ID!) {
+#   deleteFileUpload(id: $id)
+# }

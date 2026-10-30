@@ -1,0 +1,19 @@
+fragment AuditLogFields on AuditLog {
+  id
+  actorUserId
+  action
+  entityType
+  entityId
+  before
+  after
+  metadata
+  ipAddress
+  userAgent
+  createdAt
+  actor {
+    id
+    email
+    firstName
+    lastName
+  }
+}

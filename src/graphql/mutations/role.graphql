@@ -1,0 +1,11 @@
+mutation AssignUserRole($input: AssignUserRoleInput!) {
+  assignUserRole(input: $input) {
+    ...UserRoleFields
+  }
+}
+
+mutation RevokeUserRole($input: RevokeUserRoleInput!) {
+  revokeUserRole(input: $input) {
+    ...UserRoleFields
+  }
+}

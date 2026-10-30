@@ -1,0 +1,17 @@
+query GetRoles {
+  roles {
+    ...RoleDetailFields
+  }
+}
+
+query GetRole($id: ID!) {
+  role(id: $id) {
+    ...RoleDetailFields
+  }
+}
+
+query GetUserRoles($userId: ID!) {
+  userRoles(userId: $userId) {
+    ...UserRoleDetailFields
+  }
+}

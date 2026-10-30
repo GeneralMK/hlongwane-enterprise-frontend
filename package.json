@@ -1,32 +1,101 @@
 {
-  "name": "hlongwane-enterprise-frontend",
-  "version": "0.1.0",
+  "name": "dlinkup-frontend",
+  "version": "0.0.0",
   "private": true,
-  "packageManager": "yarn@1.22.22",
   "type": "module",
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=22.15.0 <23",
+    "yarn": "1.22.22"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "generate:dev": "set -o allexport; source .env; set +o allexport && graphql-codegen --config src/codegen.ts",
+    "generate": "graphql-codegen --config src/codegen.ts",
+    "start": "yarn generate && vite --host --open",
+    "develop": "set -o allexport; source .env; set +o allexport && yarn start",
+    "build": "tsc && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "prettier": "prettier \"**/*.+(js|jsx|json|css|scss|ts|tsx)\" --write"
   },
   "dependencies": {
-    "@apollo/client": "^3.13.8",
-    "@chakra-ui/react": "^2.10.9",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@supabase/supabase-js": "^2.57.4",
-    "framer-motion": "^12.23.12",
-    "graphql": "^16.11.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router-dom": "^7.8.2"
+    "@apollo/client": "3.8.6",
+    "@chakra-ui/react": "2.8.0",
+    "@chakra-ui/theme-tools": "2.2.6",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
+    "@hookform/resolvers": "2.9.10",
+    "@react-google-maps/api": "2.20.3",
+    "@react-oauth/google": "0.13.5",
+    "@react-three/drei": "9.122.0",
+    "@react-three/fiber": "8.18.0",
+    "@tanstack/react-query": "5.90.5",
+    "@tanstack/react-table": "8.7.6",
+    "axios": "1.2.0",
+    "date-fns": "2.29.3",
+    "framer-motion": "7.6.12",
+    "graphql": "16.14.2",
+    "graphql-tag": "2.12.6",
+    "lodash": "4.17.21",
+    "lucide-react": "1.25.0",
+    "prop-types": "15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.39.5",
+    "react-icons": "5.6.0",
+    "react-multi-carousel": "2.8.5",
+    "react-responsive-carousel": "3.2.23",
+    "react-router-dom": "7.15.0",
+    "recharts": "2.1.16",
+    "three": "0.170.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.2",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.4"
+    "@chakra-ui/icons": "2.2.4",
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/client-preset": "4.1.0",
+    "@graphql-codegen/introspection": "4.0.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-operations": "4.0.1",
+    "@graphql-codegen/typescript-react-apollo": "4.0.0",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/npm": "9.0.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "@types/lodash": "4.14.190",
+    "@types/node": "22.10.2",
+    "@types/react": "18.2.66",
+    "@types/react-dom": "18.2.22",
+    "@types/three": "0.170.0",
+    "@vitejs/plugin-react": "4.1.0",
+    "dotenv": "17.4.2",
+    "eslint": "8.57.0",
+    "husky": "8.0.2",
+    "lint-staged": "13.0.3",
+    "prettier": "2.8.0",
+    "semantic-release": "21.1.2",
+    "typescript": "5.6.3",
+    "vite": "4.4.5"
+  },
+  "release": {
+    "branches": [
+      "develop"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx,jsx,json,css}": [
+      "prettier --write"
+    ]
   }
 }

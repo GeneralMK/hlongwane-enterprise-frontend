@@ -1,0 +1,62 @@
+fragment PermissionFields on Permission {
+  id
+  code
+  name
+  description
+  module
+  isActive
+  createdAt
+  updatedAt
+}
+
+fragment RoleFields on Role {
+  id
+  code
+  name
+  description
+  isSystem
+  isActive
+  createdAt
+  updatedAt
+}
+
+fragment RoleDetailFields on Role {
+  ...RoleFields
+
+  permissions {
+    permission {
+      ...PermissionFields
+    }
+  }
+}
+
+fragment UserRoleFields on UserRole {
+  id
+  userId
+  roleId
+  assignedByUserId
+  isActive
+  assignedAt
+  revokedAt
+  createdAt
+  updatedAt
+
+  role {
+    ...RoleFields
+  }
+}
+
+fragment UserRoleDetailFields on UserRole {
+  ...UserRoleFields
+
+  role {
+    ...RoleDetailFields
+  }
+
+  assignedBy {
+    id
+    email
+    firstName
+    lastName
+  }
+}

@@ -1,0 +1,26 @@
+fragment CartItemFields on CartItem {
+  id
+  cartId
+  variantId
+  quantity
+  unitPriceSnapshot
+  createdAt
+  updatedAt
+}
+
+fragment CartFields on Cart {
+  id
+  userId
+  sessionKey
+  status
+  currency
+  expiresAt
+  createdAt
+  updatedAt
+  items {
+    ...CartItemFields
+    variant {
+      id
+    }
+  }
+}

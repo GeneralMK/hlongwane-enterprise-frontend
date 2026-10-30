@@ -1,0 +1,13 @@
+fragment BrandFields on Brand {
+  id
+  name
+  slug
+  description
+  logoFileId
+  logoFile {
+    id
+  }
+  isActive
+  createdAt
+  updatedAt
+}

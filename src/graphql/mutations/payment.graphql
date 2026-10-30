@@ -1,0 +1,11 @@
+mutation InitializePayment($input: InitializePaymentInput!) {
+  initializePayment(input: $input) {
+    ...PaymentFields
+  }
+}
+
+mutation RefundPayment($paymentId: ID!, $input: RefundPaymentInput!) {
+  refundPayment(paymentId: $paymentId, input: $input) {
+    ...RefundFields
+  }
+}

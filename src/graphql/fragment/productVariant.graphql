@@ -1,0 +1,39 @@
+fragment ProductVariantFields on ProductVariant {
+  id
+  productId
+  sku
+  barcode
+  price
+  salePrice
+  costPrice
+  attributes
+  isActive
+  weightGrams
+  createdAt
+  updatedAt
+  inventory {
+    id
+    variantId
+    physicalQuantity
+    reservedQuantity
+    soldQuantity
+    reorderLevel
+    createdAt
+    updatedAt
+  }
+}
+
+fragment ProductVariantDetailFields on ProductVariant {
+  ...ProductVariantFields
+  serializedDevices {
+    id
+    variantId
+    serialNumber
+    imei1
+    imei2
+    status
+    orderItemId
+    createdAt
+    updatedAt
+  }
+}

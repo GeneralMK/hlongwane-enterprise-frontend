@@ -1,26 +1,6 @@
-# Hlongwane Enterprise Frontend
+# DLinkUp frontend
 
-Customer-facing frontend for the Hlongwane Enterprise device commerce platform.
+REST queries, mutations, fragments and hooks are integrated into this project. Start with [REST_INTEGRATION.md](REST_INTEGRATION.md), then see [REST_ENDPOINTS.md](REST_ENDPOINTS.md) for the complete operation list.
 
-## Stack
+The existing UI and legacy GraphQL screens remain available. [REST_VALIDATION.md](REST_VALIDATION.md) describes verified checks and existing type errors.
 
-- Vite
-- React
-- TypeScript
-- Chakra UI
-- Apollo Client
-- React Router
-- Supabase
-- Yarn
-
-## Setup
-
-```bash
-cp .env.example .env
-yarn install
-yarn dev
-```
-
-Frontend: `http://localhost:5173`
-
-The GraphQL API defaults to `http://localhost:4000/graphql`.

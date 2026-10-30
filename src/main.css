@@ -1,0 +1,41 @@
+/* --- Full-bleed baseline for the hero layout --- */
+
+:root {
+  font-family: system-ui, Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;              /* matches the design */
+  color: rgba(255,255,255,0.92);
+}
+
+/* make the viewport truly edge-to-edge */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background: #000;                /* the screenshot has a black chrome */
+  overflow-x: hidden;              /* prevents right-hand gaps on transforms */
+  display: block;                  /* remove the default Vite centering */
+}
+
+/* kill the Vite starter constraints if present */
+#root {
+  /* REMOVE these if you have them: max-width, margin: 0 auto, padding */
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  isolation: isolate;              /* keeps hero overlays predictable */
+}
+
+/* sensible defaults */
+* { box-sizing: border-box; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+
+a { color: #6aa2ff; text-decoration: none; }
+a:hover { color: #8ab6ff; }
+
+/* optional: reset buttons if you use any */
+button { font: inherit; }

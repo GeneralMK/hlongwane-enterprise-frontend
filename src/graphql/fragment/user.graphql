@@ -1,0 +1,53 @@
+fragment UserFields on User {
+  id
+  authUserId
+  email
+  firstName
+  lastName
+  phone
+  isActive
+  emailVerifiedAt
+  lastLoginAt
+  createdAt
+  updatedAt
+}
+
+fragment AdminProfileFields on AdminProfile {
+  id
+  userId
+  employeeCode
+  jobTitle
+  department
+  isActive
+  lastLoginAt
+  createdAt
+  updatedAt
+}
+
+fragment UserListFields on User {
+  ...UserFields
+
+  adminProfile {
+    ...AdminProfileFields
+  }
+
+  userRoles {
+    ...UserRoleFields
+  }
+}
+
+fragment UserDetailFields on User {
+  ...UserFields
+
+  adminProfile {
+    ...AdminProfileFields
+  }
+
+  userRoles {
+    ...UserRoleFields
+
+    role {
+      ...RoleDetailFields
+    }
+  }
+}

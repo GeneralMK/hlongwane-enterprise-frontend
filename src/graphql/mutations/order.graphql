@@ -1,0 +1,20 @@
+mutation Checkout($input: CheckoutInput!) {
+  checkout(input: $input) {
+    ...OrderFields
+  }
+}
+
+mutation UpdateOrderStatus(
+  $id: ID!
+  $input: UpdateOrderStatusInput!
+) {
+  updateOrderStatus(id: $id, input: $input) {
+    ...OrderFields
+  }
+}
+
+mutation CancelOrder($id: ID!) {
+  cancelOrder(id: $id) {
+    ...OrderFields
+  }
+}
